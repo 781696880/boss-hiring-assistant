@@ -1,0 +1,64 @@
+# job_name 必须显式配置，禁止留空或依赖硬编码默认值运行
+job_name: ""
+job_id: ""
+job_profile_cache_enabled: true
+job_profile_cache_dir: "/Users/apple/Documents/boss-auto-lightweight-loop-python/briefs/job-profiles"
+job_profile_cache_ttl_days: 30
+job_profile_prewarm_enabled: false
+
+# 筛选与单轮处理上限
+auto_send_threshold: 3
+max_greet_per_run: 5
+recommended_feed_quota_drain_first: true
+recommended_greet_interval_seconds_min: 3
+recommended_greet_interval_seconds_max: 8
+max_collect_per_run: 10
+max_scan_per_run: 30
+max_detail_reads_per_run: 12
+fast_max_detail_reads_per_run: 8
+max_list_scroll_rounds: 4
+
+# 发送与页面读取超时
+send_interval_seconds_min: 0.5
+send_interval_seconds_max: 1.5
+input_to_send_delay_ms: 100
+send_confirm_timeout_ms: 800
+greet_confirm_timeout_ms: 800
+thread_switch_timeout_ms: 500
+resume_panel_timeout_ms: 800
+list_probe_timeout_ms: 300
+download_poll_interval_ms: 500
+download_max_wait_seconds: 30
+health_check_every_candidates: 10
+state_flush_batch_size: 5
+probe_reuse_enabled: true
+thread_fast_switch_enabled: true
+aggressive_prefilter_enabled: false
+
+card_prefilter_enabled: true
+fast_send_enabled: true
+candidate_id_strategy: "name_plus_school_or_name"
+candidate_sources:
+  - "recommended_feed"
+  - "inbound_chat"
+screen_and_greet_enabled: true
+recommended_feed_enabled: true
+resume_download_dir: "/Users/apple/Documents/boss-auto-lightweight-loop-python/resumes"
+sync_queue_file: "/Users/apple/Documents/boss-auto-lightweight-loop-python/briefs/boss-auto-lightweight-loop-sync-queue.jsonl"
+state_file: "/Users/apple/Documents/boss-auto-lightweight-loop-python/briefs/boss-auto-lightweight-loop-state.json"
+run_log_dir: "/Users/apple/Documents/boss-auto-lightweight-loop-python/briefs"
+run_log_jsonl_file: "/Users/apple/Documents/boss-auto-lightweight-loop-python/briefs/boss-auto-lightweight-loop-run.jsonl"
+archive_file: "/Users/apple/Documents/boss-auto-lightweight-loop-python/briefs/boss-auto-lightweight-loop-archive.jsonl"
+stop_on_captcha: true
+stop_on_login_error: true
+dedupe_by_candidate_id: true
+only_follow_sent_candidates: true
+default_mode: "dry-run"
+runtime_lite: true
+cron_output_format: "json"
+request_resume_message: "你好，我这边看了你的经历，和当前岗位匹配度不错。方便的话，可以发一份最新附件简历给我吗？我这边进一步评估后再和你沟通，谢谢。"
+confirm_received_message: "简历已收到，我们会尽快筛选，合适的话会联系您。"
+
+# 本地运行锁：防止自动化任务 / 本地脚本重复并发执行
+lock_dir: "/Users/apple/Documents/boss-auto-lightweight-loop-python/briefs/boss-auto.lockdir"
+lock_ttl_minutes: 30

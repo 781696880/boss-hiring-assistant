@@ -1,0 +1,9 @@
+resume_download_dir: /Users/apple/Documents/boss-auto-lightweight-loop-python/resumes
+state_file: /Users/apple/Documents/boss-auto-lightweight-loop-python/briefs/feishu-hire-sync-state.json
+manifest_file: /Users/apple/Documents/boss-auto-lightweight-loop-python/briefs/boss-auto-lightweight-loop-state.json
+sync_mode: talent_application
+job_id: ""
+resume_source_id: "18"
+talent_pool_id: ""
+create_note: false
+allow_duplicate_names: false
