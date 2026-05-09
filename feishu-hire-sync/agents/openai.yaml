@@ -1,0 +1,4 @@
+interface:
+  display_name: "飞书招聘同步"
+  short_description: "把本地 Boss 简历同步到飞书招聘人才和投递"
+  default_prompt: "使用 $feishu-hire-sync 执行飞书招聘同步测试任务。先读取 skill 的状态机和工作流，只处理 Boss manifest 中 boss_status 或 status 为 resume_downloaded、ready_for_hire_sync 或 boss_completed 的候选人。Boss 上游只提供 candidate_id、local_resume_path、resume_hash 和原始卡片摘要，不依赖 Boss 侧的 external_id、resume_source_id、career_list 或 education_list。优先校验 candidate_id、job_id，以及本地简历解析后得到的真实手机号/邮箱/证件号；resume_source_id 必须由飞书同步侧从 .env.local 中的 FEISHU_HIRE_RESUME_SOURCE_ID=18 注入，遇到 boss_zhipin 等历史非数字值必须先清洗覆盖。如果这些字段暂时没有，先保留为 needs_manual_review，不要用虚拟手机号或邮箱。然后再运行脚本完成附件上传、人才创建/复用、投递创建，以及可选的人才库和备注写入。不要回到 Boss 发消息流程。"

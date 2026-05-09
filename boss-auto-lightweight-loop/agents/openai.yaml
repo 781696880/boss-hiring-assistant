@@ -1,0 +1,7 @@
+interface:
+  display_name: "Boss 自动招聘闭环"
+  short_description: "自动筛选、求简历、收附件并归档飞书"
+  brand_color: "#0F766E"
+  default_prompt: "Use $boss-auto-lightweight-loop to run a safe Boss hiring loop for the configured job. For all Boss browser reads, clicks, sends, receives, and downloads, use the web-access CDP Proxy path directly; do not use opencli boss site adapters or other browser wrappers."
+policy:
+  allow_implicit_invocation: true
